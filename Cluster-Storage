@@ -1,0 +1,52 @@
+-> Google Cloud Storage for Object Storage
+-> Container Registry for storing container images
+-> Cloud Filestore if app requires managed Network Attached Storage(NAS)
+-> If app needs block storage, use Persistent disks
+
+Volumes
+*******
+-> Volumes are storage accessible to containers in a Pod
+
+Types of Volumes
+****************
+1. emptyDir
+-> Ephemeral volume type that provides an empty directory that containers in the pod can read and write from
+-> Data is deleted when pod is deleted
+-> Useful for scratch space and sharing data between multiple containers in a Pod
+
+2. configMap
+-> Configuration data is made accessible to applications
+-> Files in a configMap volume are specified by a configMap resource
+
+3. secret
+-> Sensitive data such as passwords, OAuth tokens and SSH keys are made accessible to the applications
+
+4. downwardAPI
+
+5. persistentVolumeClaim
+-> Cluster operators can provision durable storage to be used by applications
+-> A Pod uses a PersistentVolumeClaim to mount a Volume that is backed by this durable storage
+
+PersistentVolume
+****************
+-> Cluster resources that pods can use for durable storage
+-> PersistentVolumes are cluster resources that exist independently of Pods
+-> PersistentVolume resources can be provisioned dynamically through PersistentVolumeClaims
+
+PersistentVolumeClaim
+*********************
+-> PVC is a request for and claim to a PersistentVolume resource
+-> PersistentVolumeClaim objects request a specific size, access mode, and StorageClass for the PersistentVolume
+
+
+-> Portability is another advantage of using PersistentVolumes and PersistentVolumeClaims
+
+
+Access Modes
+************
+-> ReadWriteOnce
+-> ReadOnlyMany
+-> ReadWriteMany
+
+
+
